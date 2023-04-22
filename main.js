@@ -20,14 +20,14 @@ function showError(errorMessage) {
   header.insertAdjacentHTML('afterend', html);
 }
 
-function showCard({ name, country, temp, condition, imgPath }) {
+function showCard({ name, country, temp, condition, imgPath, icon }) {
   // Разметка для карточки
   const html = `<div class="card">
                   <h2 class="card-city">${name} <span>${country}</span></h2>
 
                   <div class="card-weather">
                       <div class="card-value">${temp}<sup>°c</sup></div>
-                      <img class="card-img" src="${imgPath}" alt="Weather">
+                      <img class="card-img" src="${icon}" alt="Weather">
                   </div>
 
                   <div class="card-description">${condition}</div>
@@ -64,26 +64,26 @@ form.onsubmit = async function (e) {
 
     console.log(data.current.condition.code);
 
-    const info = conditions.find(
-      (obj) => obj.code === data.current.condition.code
-    );
-    console.log(info);
-    console.log(info.languages[23]['day_text']);
+    // const info = conditions.find(
+    //   (obj) => obj.code === data.current.condition.code
+    // );
+    // console.log(info);
+    // console.log(info.languages[23]['day_text']);
 
-    const filePath = './img/' + (data.current.is_day ? 'day' : 'night') + '/';
-    const fileName = (data.current.is_day ? info.day : info.night) + '.png';
-    const imgPath = filePath + fileName;
-    console.log('filePath', filePath + fileName);
+    // const filePath = './img/' + (data.current.is_day ? 'day' : 'night') + '/';
+    // const fileName = (data.current.is_day ? info.day : info.night) + '.png';
+    // const imgPath = filePath + fileName;
+    // console.log('filePath', filePath + fileName);
 
-    const weatherData = {
-      name: data.location.name,
-      country: data.location.country,
-      temp: data.current.temp_c,
-      condition: data.current.is_day
-        ? info.languages[23]['day_text']
-        : info.languages[23]['night_text'],
-      imgPath,
-    };
+    // const weatherData = {
+    //   name: data.location.name,
+    //   country: data.location.country,
+    //   temp: data.current.temp_c,
+    //   condition: data.current.is_day
+    //     ? info.languages[23]['day_text']
+    //     : info.languages[23]['night_text'],
+    //   imgPath,
+    // };
 
     showCard(weatherData);
   }
