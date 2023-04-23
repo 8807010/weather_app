@@ -1,0 +1,40 @@
+@media (max-width: 560px) {
+  .form {
+    max-width: 300px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .card-value {
+    font-size: 50px;
+  }
+
+  .card-weather {
+    gap: 15px;
+  }
+
+  .card {
+    padding: 15px;
+    row-gap: 10px;
+  }
+
+  .card-city {
+    font-size: 20px;
+  }
+
+  .card-description {
+    font-size: 16px;
+  }
+}

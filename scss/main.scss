@@ -1,9 +1,10 @@
-@import './_reset.scss';
+@import './reset';
 @import url(https://fonts.googleapis.com/css?family=Rubik:300,regular,500,700&display=swap);
 
 html,
 body {
   min-height: 100vh;
+  overflow: clip;
 }
 
 body {
@@ -49,11 +50,11 @@ body {
   font-size: 20px;
   line-height: 1;
   color: #000000;
+  border-radius: 6px;
 }
 
 .btn {
-  width: 145px;
-  height: 54px;
+  padding: 15px 26px;
   background: #eb555d;
   border-radius: 6px;
   font-weight: 500;
@@ -73,7 +74,6 @@ body {
   flex-direction: column;
   row-gap: 20px;
   padding: 30px;
-  min-width: 360px;
   background-color: #fff;
   border-radius: 6px;
   box-shadow: 0px 5px 20px rgba(27, 108, 114, 0.25);
@@ -154,3 +154,11 @@ body {
   color: #2e7695;
   text-decoration: none;
 }
+
+.active {
+  background-image: url(./../img/weather/day/116.png);
+  background-size: cover;
+  background-position: bottom center;
+}
+
+@import './media';
