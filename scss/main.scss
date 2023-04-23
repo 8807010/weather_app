@@ -4,7 +4,7 @@
 html,
 body {
   min-height: 100vh;
-  overflow: clip;
+  overflow: auto;
 }
 
 body {
@@ -153,12 +153,6 @@ body {
 .footer a {
   color: #2e7695;
   text-decoration: none;
-}
-
-.active {
-  background-image: url(./../img/weather/day/116.png);
-  background-size: cover;
-  background-position: bottom center;
 }
 
 @import './media';

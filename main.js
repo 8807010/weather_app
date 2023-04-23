@@ -20,7 +20,7 @@ function showError(errorMessage) {
   header.insertAdjacentHTML('afterend', html);
 }
 
-function showCard({ name, country, temp, condition, imgPath, icon }) {
+function showCard({ name, country, temp, condition, icon }) {
   // Разметка для карточки
   const html = `<div class="card">
                   <h2 class="card-city">${name} <span>${country}</span></h2>
@@ -82,10 +82,13 @@ form.onsubmit = async function (e) {
       condition: data.current.is_day
         ? info.languages[23]['day_text']
         : info.languages[23]['night_text'],
-      // imgPath,
       icon: data.current.condition.icon
     };
 
     showCard(weatherData);
+    if (showCard) {
+      document.body.style.backgroundImage = `url(${data.current.condition.icon})`;
+      document.body.style.backgroundSize = '30px';
+    };
   }
 };
